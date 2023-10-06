@@ -19,6 +19,24 @@ state = {
   }
 
 
+  componentDidMount() {
+
+    const contactItems = localStorage.getItem("contacts");
+    const parsedContacts = JSON.parse(contactItems);
+
+    if (parsedContacts) {
+      this.setState({contacts: parsedContacts})
+    }
+
+}
+
+   componentDidUpdate(prevProps, prevState) {
+
+     
+  if (this.state.contacts.length !== prevState.contacts.length) {
+  localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+  }  }
+
   formSubmitHandler = (data) => {
     const { name, number } = data;
     const newContact = { id: nanoid(), name, number };

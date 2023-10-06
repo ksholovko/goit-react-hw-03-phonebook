@@ -8,6 +8,7 @@ export default class ContactForm extends Component {
         number: '',
     }
 
+
     nameInputId = nanoid();
 
     telInputId = nanoid();
