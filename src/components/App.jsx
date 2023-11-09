@@ -52,7 +52,7 @@ state = {
 
   }
 
-  handleFilterChange = ({input}) => {
+  handleFilterChange = (input) => {
     this.setState({ filter: input }); 
   }
 
@@ -89,3 +89,5 @@ state = {
   );}
   
 };
+
+
